@@ -10,8 +10,8 @@ services:
       mode: replicated  # 使用 swarm replicated 模式
       replicas: 1  # 執行一個副本
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]  # 僅部署在標記為 airflow 的節點
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]  # 僅部署在標記為 airflow 的節點
     networks:
       - my_swarm_network  # 使用外部 swarm 網路
 
@@ -26,8 +26,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]
     networks:
       - my_swarm_network
 
@@ -46,8 +46,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]
     networks:
         - my_swarm_network
 
@@ -67,8 +67,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]
     networks:
       - my_swarm_network
 
@@ -85,8 +85,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]
     networks:
         - my_swarm_network
   
@@ -107,8 +107,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.role == manager] 
-        # constraints: [node.labels.airflow == true]
+        # constraints: [node.role == manager] 
+        constraints: [node.labels.airflow == true]
     networks:
       - my_swarm_network
 
