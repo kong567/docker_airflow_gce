@@ -8,10 +8,17 @@ services:
     command: >
       /bin/bash -c "
         echo 'Waiting for MySQL...';
-        until mysqladmin ping -h mysql_mysql -u root -pqweasdkimo123 --silent; do
-          sleep 3;
-        done;
-        pipenv run airflow webserver -p 5000"
+        python3 -c \"
+      import socket, time
+      while True:
+          try:
+              with socket.create_connection(('mysql_mysql', 3306), timeout=5):
+                  break
+          except Exception:
+              time.sleep(3)
+      \"; 
+          pipenv run airflow webserver -p 5000"
+          
     environment:
       - AIRFLOW_HOME=/dataflow
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=mysql+pymysql://root:qweasdkimo123@mysql_mysql/airflow
