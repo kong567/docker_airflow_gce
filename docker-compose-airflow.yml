@@ -6,17 +6,15 @@ services:
     image: ${DOCKER_IMAGE_FULL}  # 使用指定版本的自定義映像
     # command: pipenv run airflow db init  # 初始化 Airflow 的 metadata DB
     command: >
-      /bin/bash -c "
-        echo 'Waiting for MySQL...';
-        python3 -c "
-        import socket, time
-        while True:
-            try:
-                with socket.create_connection(('mysql_mysql', 3306), timeout=5):
-                    break
-            except Exception:
-                time.sleep(3)
-        "
+      command: >
+        /bin/bash -c 'echo "Waiting for MySQL...";
+        python3 -c "import socket, time
+      while True:
+          try:
+              with socket.create_connection((\"mysql_mysql\", 3306), timeout=5):
+                  break
+          except Exception:
+              time.sleep(3)"'
 
     environment:
       - AIRFLOW_HOME=/dataflow
