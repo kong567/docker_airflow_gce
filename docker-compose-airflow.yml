@@ -4,7 +4,14 @@ services:
   # 初始化 Airflow 資料庫
   initdb:
     image: ${DOCKER_IMAGE_FULL}  # 使用指定版本的自定義映像
-    command: pipenv run airflow db init  # 初始化 Airflow 的 metadata DB
+    # command: pipenv run airflow db init  # 初始化 Airflow 的 metadata DB
+    command: >
+      /bin/bash -c "
+        echo 'Waiting for MySQL...';
+        until mysqladmin ping -h mysql_mysql -u root -pqweasdkimo123 --silent; do
+          sleep 3;
+        done;
+        pipenv run airflow webserver -p 5000"
     environment:
       - AIRFLOW_HOME=/dataflow
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=mysql+pymysql://root:qweasdkimo123@mysql_mysql/airflow
