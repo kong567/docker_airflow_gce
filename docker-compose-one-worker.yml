@@ -8,12 +8,13 @@ services:
     # 將容器內的 docker 與容器外的 docker 做連結
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      
+      - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
     depends_on:
       - scheduler
     command: pipenv run airflow celery worker -q All_crawler --concurrency=6
     environment:
       - ENV=DOCKER 
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
     # swarm 設定
     deploy:
       mode: replicated
