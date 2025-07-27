@@ -26,7 +26,7 @@ with airflow.DAG(
     default_args=DEFAULT_ARGS,
     # 不自動排程，只能手動或外部觸發
     # schedule_interval="*/5 9-14 * * 1-5",
-    schedule_interval="*/30 * * * 1-5",
+    schedule_interval= None,
     # 限制同時執行的最大 DAG 實例數
     max_active_runs=MAX_ACTIVE_RUNS,
     # 禁止補跑過去未執行的排程
