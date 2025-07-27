@@ -62,6 +62,8 @@ services:
     ports:
       - 5000:5000  # 對外開放 5000 port
     environment:
+      - AIRFLOW__WEBSERVER__WEB_SERVER_NAME=airflow
+      - AIRFLOW__WEBSERVER__INSTANCE_NAME=airflow
       - TZ=Asia/Taipei  # 設定時區environment:
     #   - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
     # volumes:
@@ -105,7 +107,9 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     #   - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
-    # environment:
+    environment:
+      - AIRFLOW__WEBSERVER__WEB_SERVER_NAME=airflow
+      - AIRFLOW__WEBSERVER__INSTANCE_NAME=airflow
     #   - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
     deploy:
       mode: replicated
