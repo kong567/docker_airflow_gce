@@ -63,9 +63,9 @@ services:
       - 5000:5000  # 對外開放 5000 port
     environment:
       - TZ=Asia/Taipei  # 設定時區environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
-    volumes:
-      - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
+    #   - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
+    # volumes:
+    #   - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
     deploy:
       mode: replicated
       replicas: 1
@@ -104,9 +104,9 @@ services:
     # 將容器內的 docker 與容器外的 docker 做連結
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
-    environment:
-      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
+    #   - ./keys/airflow-467007-2ba7d0655b30.json:/opt/airflow/keys/gcp_service_account.json:ro
+    # environment:
+    #   - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_service_account.json
     deploy:
       mode: replicated
       replicas: 1
