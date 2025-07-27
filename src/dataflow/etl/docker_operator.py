@@ -11,7 +11,7 @@ from airflow.operators.docker_operator import (
 def crawler_cnyes_headlines(month) -> DockerOperator:
     return DockerOperator(
         # 設定這個 task 在 DAG 中的名稱（唯一識別碼）
-        task_id="crawler_cnyes_headlines",
+        task_id="crawler_cnyes_headlines{month}",
         image="qweasdkimo123/crawler:0.0.1",
         command=f"pipenv run python crawler/crawler_cnyes_headlines.py {month}",
         # 每次執行前都強制重新拉取最新的 image（確保使用最新版本）
