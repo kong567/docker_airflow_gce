@@ -19,6 +19,8 @@ etf_list = ['00757.TW','0052.TW','00713.TW','00830.TW','00733.TW','00850.TW','00
 
 
 
+
+
 # 定義 DAG，並用 with 語法將任務放入 DAG 環境中
 with airflow.DAG(
     # DAG 的唯一名稱，用來識別 DAG
@@ -26,8 +28,9 @@ with airflow.DAG(
     # 套用預設參數設定
     default_args=DEFAULT_ARGS,
     # 不自動排程，只能手動或外部觸發
-    # schedule_interval="*/5 9-14 * * 1-5",
-    schedule_interval= None,
+    schedule_interval="30 23 * * 1-5",
+    # schedule_interval= None,
+    concurrency=1,
     # 限制同時執行的最大 DAG 實例數
     max_active_runs=MAX_ACTIVE_RUNS,
     # 禁止補跑過去未執行的排程

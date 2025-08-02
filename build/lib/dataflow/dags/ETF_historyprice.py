@@ -12,23 +12,30 @@ from dataflow.constant import (
 # 匯入自定義的 DockerOperator 任務建立函式
 from dataflow.etl.docker_operator import (
     # 建立並回傳一個 DockerOperator 任務
-    vix,
+    ETF_historyprice,
 )
+
+etf_list = ['00757.TW','0052.TW','00713.TW','00830.TW','00733.TW','00850.TW','00692.TW','0050.TW','00662.TW','00646.TW']
+
+
 
 # 定義 DAG，並用 with 語法將任務放入 DAG 環境中
 with airflow.DAG(
     # DAG 的唯一名稱，用來識別 DAG
-    dag_id="vix",
+    dag_id="ETF_historyprice",
     # 套用預設參數設定
     default_args=DEFAULT_ARGS,
     # 不自動排程，只能手動或外部觸發
-    schedule_interval="30 23 * * 1-5",
-    # schedule_interval= None,
-    concurrency=1,
+    # schedule_interval="*/5 9-14 * * 1-5",
+    schedule_interval= None,
     # 限制同時執行的最大 DAG 實例數
     max_active_runs=MAX_ACTIVE_RUNS,
     # 禁止補跑過去未執行的排程
     catchup=False,
+    
 ) as dag:
-    # 建立並註冊 DockerOperator 任務到 DAG
-    task = vix("^vix")
+    tasks = []
+    for tickers in etf_list:
+        task = ETF_historyprice(tickers)
+        print(f"ETF_historyprice({tickers}) return type: ", type(task))
+        tasks.append(task)

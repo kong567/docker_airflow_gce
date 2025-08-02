@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "26dd92ae7354340be60e4ca7c310171578541a25b4e7b6a4749f26e34fcf23d4"
+            "sha256": "97470d9a1316d74f4e7b1af8fdc6d4ebf80af2d54ff7d1e732771f6a8fb536ca"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -297,7 +297,7 @@
                 "sha256:03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba",
                 "sha256:63579f9a0628e06278f7e47b7d7d5b6ce20dc65c5e96a6f3ca99a6adca0396e8"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==2.2.1"
         },
         "backports.zoneinfo": {
@@ -324,6 +324,14 @@
             ],
             "markers": "python_version < '3.9'",
             "version": "==0.2.1"
+        },
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:9bbbb14bfde9d79f38b8cd5f8c7c85f4b8f2523190ebed90e950a8dea4cb1c4b",
+                "sha256:dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
+            ],
+            "index": "pypi",
+            "version": "==4.13.4"
         },
         "billiard": {
             "hashes": [
@@ -734,11 +742,11 @@
         },
         "docstring-parser": {
             "hashes": [
-                "sha256:538beabd0af1e2db0146b6bd3caa526c35a34d61af9fd2887f3a8a27a739aa6e",
-                "sha256:bf0a1387354d3691d102edef7ec124f219ef639982d096e26e3b60aeffa90637"
+                "sha256:583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912",
+                "sha256:cf2569abd23dce8099b300f9b4fa8191e9582dda731fd533daf54c4551658708"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
-            "version": "==0.16"
+            "markers": "python_version >= '3.8'",
+            "version": "==0.17.0"
         },
         "email-validator": {
             "hashes": [
@@ -792,7 +800,7 @@
                 "sha256:63a28fc9731bcc6c4b8815b6f954b5904caa534fc2ae9b93b1d3ef12930dca95",
                 "sha256:9215d05a9413d3855764bcd67035e75819d23af2fafb6b55197eb5a3313fdfb2"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==4.6.0"
         },
         "flask-limiter": {
@@ -954,7 +962,7 @@
                 "sha256:8e12297c5b45cfc20d629b83e1233f83a1c7d5f830f24f31bc5bb8816c0cda1b",
                 "sha256:e4adadd36e35eeeb8537b926840372c3080c2f5a6909d44aa1bacbced2260bb1"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==4.2.3"
         },
         "gcloud-aio-bigquery": {
@@ -962,7 +970,7 @@
                 "sha256:4a3c775c2677c0588e9caeb2df40d81a54b31c174e562a527cb08e023c4408a3",
                 "sha256:524ae3cc14c1af6977a358829cc673b4471159caa7d62bba7f2d9334262bcd4a"
             ],
-            "markers": "python_version >= '3.8' and python_version < '4.0'",
+            "markers": "python_version >= '3.8' and python_version < '4'",
             "version": "==7.1.0"
         },
         "gcloud-aio-storage": {
@@ -970,7 +978,7 @@
                 "sha256:0a8cc27223cea05ad27117fa574ce8697ec32a252382cbfdfe54df0678e92d03",
                 "sha256:47be865222d22fdf873cd5a4af9a285d7b64b176d4d92f1773ecacd52a6a8c6f"
             ],
-            "markers": "python_version >= '3.8' and python_version < '4.0'",
+            "markers": "python_version >= '3.8' and python_version < '4'",
             "version": "==9.2.0"
         },
         "gcsfs": {
@@ -1007,11 +1015,11 @@
         },
         "google-api-python-client": {
             "hashes": [
-                "sha256:2b451cdd7fd10faeb5dd20f7d992f185e1e8f4124c35f2cdcc77c843139a4cf1",
-                "sha256:e22239797f1d085341e12cd924591fc65c56d08e0af02549d7606092e6296510"
+                "sha256:9ffd2b57d68f5afa7e6ac64e2c440534eaa056cbb394812a62ff94723c31b50e",
+                "sha256:f2f50f11105ab883eb9b6cf38ec54ea5fd4b429249f76444bec90deba5be79b3"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.176.0"
+            "version": "==2.177.0"
         },
         "google-auth": {
             "hashes": [
@@ -1110,19 +1118,19 @@
         },
         "google-cloud-compute": {
             "hashes": [
-                "sha256:3635558c5194be9d801bfed61055c3b57e872fb19733864dabb0082d396ba15e",
-                "sha256:76d775da26aefbf05eb6b95703f6015e0698e63c97219bbe74ffd34012b01386"
+                "sha256:0ffc56bfca9583c2fa5f2b6271b6756a4d6f5cdbefe2656420711297292e42ee",
+                "sha256:8237b455a66e4b4360c7401c0241c29b99c626a103132f6c2db9fa3359fc7188"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.32.0"
+            "version": "==1.33.0"
         },
         "google-cloud-container": {
             "hashes": [
-                "sha256:811cb7043ea4fa9edca29f575fe180c07cce14b841f71a8e03ce6d1b6b4273e2",
-                "sha256:fa7e6f593f58348b98bd6dd59344c9a6038e9fba6c0b9858e23d9d278346f129"
+                "sha256:66c4ca515d33cc66f37fd8e5b6ba89063b06ebab33e1495b8c424c720b3fb603",
+                "sha256:e42b1fd67ec1ed92bce52f080593a7c4e5364f407b146c8b3f313969e1e6fb0f"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.57.0"
+            "version": "==2.59.0"
         },
         "google-cloud-core": {
             "hashes": [
@@ -1270,11 +1278,11 @@
         },
         "google-cloud-run": {
             "hashes": [
-                "sha256:53e61a0b313ce266c16e57165a9cb29bb801799beb944fd87c206cfca72c76cc",
-                "sha256:754974343bde47f0ccbe30b0bfebd0632369126898ee6a305783ab7a6afcea3c"
+                "sha256:cf9feea66898d57ef8c2d6095d599cab2c013750aef71c58f04a88495e370fca",
+                "sha256:e95f9337c4a66c8a094881864c86f708b6a519b938bef890eef43606e44e7538"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==0.10.18"
+            "version": "==0.10.19"
         },
         "google-cloud-secret-manager": {
             "hashes": [
@@ -1286,11 +1294,11 @@
         },
         "google-cloud-spanner": {
             "hashes": [
-                "sha256:bec170c6619f667cc657e977f87391d76975559be70b155d90a2902613662b3c",
-                "sha256:fc9f717b612924f5e9bfae9514aa0d5cd30e6b40e8d472d030f84b16de2c18fe"
+                "sha256:64f732a44f6a2892b5cc3be88e6e2cc92b5e52db883d1e946e1e3ff93c9745f0",
+                "sha256:bf7e4359d2f2148eda18a11f909813d07e794347a02f56dfbbd544418d30e5b2"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==3.55.0"
+            "version": "==3.56.0"
         },
         "google-cloud-speech": {
             "hashes": [
@@ -1611,7 +1619,7 @@
                 "sha256:0035f33228693ed3767ee49d937bac424318db173fef4d2d0170b3215f254d9d",
                 "sha256:1f45c0bcb58b6f332f37c637632247c9b02bc6af0fdceb7ba7ce8d2ebbfb0926"
             ],
-            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==0.15.4"
         },
         "grpcio": {
@@ -3021,7 +3029,7 @@
                 "sha256:68635866661c6836b8d39430f97a996acbd61bfa49406748ea243539fe239762",
                 "sha256:e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "markers": "python_version >= '3.6' and python_version < '4'",
             "version": "==4.9.1"
         },
         "setproctitle": {
@@ -3198,6 +3206,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==1.3.1"
+        },
+        "soupsieve": {
+            "hashes": [
+                "sha256:6e60cc5c1ffaf1cebcc12e8188320b72071e922c2e897f737cadce79ad5d30c4",
+                "sha256:ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==2.7"
         },
         "sqlalchemy": {
             "hashes": [
