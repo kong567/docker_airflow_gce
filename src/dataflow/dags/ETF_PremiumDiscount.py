@@ -25,11 +25,11 @@ with airflow.DAG(
     # 套用預設參數設定
     default_args=DEFAULT_ARGS,
     # 不自動排程，只能手動或外部觸發
-    schedule_interval="0 9-17 * * 1-5",
+    schedule_interval="0 13-15 * * 1-5",
     # schedule_interval= None,
     concurrency=3,
     # 限制同時執行的最大 DAG 實例數
-    max_active_runs=2,
+    max_active_runs=MAX_ACTIVE_RUNS,
     # 禁止補跑過去未執行的排程
     catchup=False,
 ) as dag:
