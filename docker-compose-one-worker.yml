@@ -18,7 +18,7 @@ services:
     # swarm 設定
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 3
       placement:
         constraints: [node.labels.All_crawler == true]
     networks:
