@@ -30,8 +30,8 @@ with airflow.DAG(
     # 不自動排程，只能手動或外部觸發
     schedule_interval="0 17-19 * * 1-5",
     # schedule_interval= None,
-    max_active_tasks=10,
-    # concurrency=2,
+    # max_active_tasks=10,
+    concurrency=2,
     # 限制同時執行的最大 DAG 實例數
     max_active_runs=MAX_ACTIVE_RUNS,
     # 禁止補跑過去未執行的排程
