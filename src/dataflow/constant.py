@@ -3,7 +3,7 @@ import datetime  # 匯入 datetime 模組，用來設定時間參數
 # 預設參數，會套用在 DAG 與 Task 中
 DEFAULT_ARGS = {
     # DAG/Task 的負責人，顯示在 Airflow UI 中
-    "owner": "FinMind",
+    "owner": "airflowGP4",
     # 若任務失敗，最多重試 1 次
     "retries": 1,
     # 每次重試間隔 1 分鐘
@@ -11,7 +11,7 @@ DEFAULT_ARGS = {
     # DAG 開始生效的時間
     "start_date": datetime.datetime(2022, 1, 1),
     # 單一 task 最長可執行 60 分鐘，超時則視為失敗
-    "execution_timeout": datetime.timedelta(minutes=60),
+    "execution_timeout": datetime.timedelta(minutes=20),
     # 限制 DAG 同時最多執行 10 個 task
     "concurrency": 10,
 }
