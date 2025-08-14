@@ -77,23 +77,23 @@ services:
     networks:
       - my_swarm_network
 
-  flower:
-    image: mher/flower:0.9.5
-    restart: always
-    depends_on:
-      - redis
-    command: ["flower", "--broker=redis://redis:6379/0", "--port=5555"]
-    ports:
-        - "5556:5555"
-    # swarm 設定
-    deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        # constraints: [node.role == manager] 
-        constraints: [node.labels.airflow == true]
-    networks:
-        - my_swarm_network
+  # flower:
+  #   image: mher/flower:0.9.5
+  #   restart: always
+  #   depends_on:
+  #     - redis
+  #   command: ["flower", "--broker=redis://redis:6379/0", "--port=5555"]
+  #   ports:
+  #       - "5556:5555"
+  #   # swarm 設定
+  #   deploy:
+  #     mode: replicated
+  #     replicas: 1
+  #     placement:
+  #       # constraints: [node.role == manager] 
+  #       constraints: [node.labels.airflow == true]
+  #   networks:
+  #       - my_swarm_network
   
   # Airflow 排程器，負責執行 DAG 任務
   scheduler:
