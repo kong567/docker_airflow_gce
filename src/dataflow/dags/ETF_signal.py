@@ -26,9 +26,9 @@ with airflow.DAG(
     default_args=DEFAULT_ARGS,
     # 不自動排程，只能手動或外部觸發
     # schedule_interval="0 5 * * 1-5",
-    schedule_interval="30 9-12 * * 1-5",
+    schedule_interval="0 9 * * 1-5",
     # schedule_interval= None,
-    concurrency=5,
+    concurrency=10,
     # 限制同時執行的最大 DAG 實例數
     max_active_runs=MAX_ACTIVE_RUNS,
     # max_active_runs=1,
