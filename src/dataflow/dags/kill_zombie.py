@@ -18,4 +18,5 @@ with DAG(
     clear_stuck = PythonOperator(
     task_id="clear_stuck_dag_runs",
     python_callable=clear_stuck_dag_runs,
+    queqe = "All_crawler"
 )
