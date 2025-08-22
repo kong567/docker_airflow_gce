@@ -16,8 +16,9 @@ def clear_stuck_dag_runs_ETF(session=None, **kwargs):
             .all()
         )
         for run in stuck_runs:
-            print(f"Clearing stuck DAG: {run.dag_id}, run: {run.execution_date}")
+            print(f"清除卡住的dag: {run.dag_id}, run: {run.execution_date}")
             run.set_state(State.FAILED)
+            session.merge(run)
     session.commit()
 
 
@@ -34,6 +35,8 @@ def clear_stuck_dag_runs_NEWS(session=None, **kwargs):
             .all()
         )
         for run in stuck_runs:
-            print(f"Clearing stuck DAG: {run.dag_id}, run: {run.execution_date}")
+            print(f"清除卡住的dag: {run.dag_id}, run: {run.execution_date}")
             run.set_state(State.FAILED)
+            session.merge(run)
     session.commit()
+    
